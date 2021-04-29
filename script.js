@@ -4,6 +4,9 @@ const searchForm= document.querySelector('form');
 //grab search-result div where the searches will appear
 const searchResult = document.querySelector('.search-result');
 
+//grab search button
+const searchIcon =document.getElementById('search-icon')
+
 //grab container of all search divs
 const container = document.querySelector('.container');
 
@@ -41,6 +44,16 @@ searchForm.addEventListener('submit', (e) =>{
     fetchAPI();
 })
 
+// searchIcon.addEventListener('click', (e) =>{
+//     e.preventDefault();
+//     //e= event object, in this case the 'submit' event 
+
+//     //grab and store search input entered by user in the searchValue variable below
+
+//     searchValue = e.target.querySelector('input').value
+//     fetchAPI();
+// })
+
 //create fetch API function
 
 async function fetchAPI (){
@@ -72,18 +85,21 @@ function generateHTML(results){
     results.map(result =>{
         //console.log(result.recipe.ingredients[0].text)
         generatedHTML += `<div class="item">
-        <img src="${result.recipe.image}" alt="">
+        <img src="${result.recipe.image}" alt="${result.recipe.label}">
         <div class="flex-container">
            <h1 class="title">${result.recipe.label}</h1>
            <!-- add a button -->
            <a class="view-button" href="${result.recipe.url}" target="_blank">View Recipe</a>
         </div>
-        <p class="item-data">Calories:${result.recipe.calories.toFixed(2)}Kcal</p>
-        <p class="item-data">Diet Label: ${result.recipe.dietLabels.length > 0 ? result.recipe.dietLabels: 'No Data Found'}
-        <p class="item-data">Health Label:${result.recipe.healthLabels}
-        </p>   
-             
         <p class="item-data ingredients">Ingredients:${(result.recipe.ingredients).map(el=>el.text)}</p>
+
+        <h4 class="small-item-data">Diet Label: ${result.recipe.dietLabels.length > 0 ? result.recipe.dietLabels: 'No Data Found'}</h4>
+        <h4 class="small-item-data">Health Label: ${result.recipe.healthLabels}
+        </h4>
+        <h6 class="small-item-data">Calories: ${result.recipe.calories.toFixed(2)}Kcal</h6>
+           
+             
+        
         
     </div>`
     })

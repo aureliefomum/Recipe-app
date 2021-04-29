@@ -127,6 +127,14 @@ form ion-icon {
   letter-spacing: 0.05rem;
   line-height: 2rem;
 }
+.small-item-data {
+  color: whitesmoke;
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1rem;
+}
 /* .view-ingredients {
   position: absolute;
   text-decoration: none;
