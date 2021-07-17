@@ -1,16 +1,8 @@
-//grab search form
+
 const searchForm= document.querySelector('form');
-
-//grab search-result div where the searches will appear
 const searchResult = document.querySelector('.search-result');
-
-//grab search button
 const searchIcon =document.getElementById('search-icon')
-
-//grab container of all search divs
 const container = document.querySelector('.container');
-
-//grab search value typed by user
 let searchValue = '';
 
 const APP_ID = '81953d04';
