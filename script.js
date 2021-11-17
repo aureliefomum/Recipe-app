@@ -18,7 +18,7 @@ searchForm.addEventListener('submit', (e) =>{
 
 searchIcon.addEventListener('click', (e) =>{
     e.preventDefault();
-    const input = document.getElementById('search-input') 
+    const input = document.querySelector('#search-input');
     searchValue = input.value
     fetchAPI();
     
