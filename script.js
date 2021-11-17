@@ -14,8 +14,15 @@ searchForm.addEventListener('submit', (e) =>{
     searchValue = e.target.querySelector('input').value
     fetchAPI();
     
-})
+});
 
+searchIcon.addEventListener('click', (e) =>{
+    e.preventDefault();
+    const input = document.getElementById('search-input') 
+    searchValue = input.value
+    fetchAPI();
+    
+});
 async function fetchAPI (){
     
     const baseURL = `https://api.edamam.com/search?q=${searchValue}&app_id=${APP_ID}&app_key=${APP_key}&to=20`;    
