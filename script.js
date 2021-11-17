@@ -13,6 +13,7 @@ searchForm.addEventListener('submit', (e) =>{
     e.preventDefault();
     searchValue = e.target.querySelector('input').value
     fetchAPI();
+    searchValue= ''
     
 });
 
@@ -21,6 +22,7 @@ searchIcon.addEventListener('click', (e) =>{
     const input = document.querySelector('#search-input');
     searchValue = input.value
     fetchAPI();
+    searchValue= ''
     
 });
 async function fetchAPI (){
