@@ -5,7 +5,7 @@ const searchForm= document.querySelector('form');
 const searchResult = document.querySelector('.search-result');
 
 //grab search button
-const searchIcon =document.getElementById('search-icon')
+const searchIcon = document.getElementById('search-icon')
 
 //grab container of all search divs
 const container = document.querySelector('.container');
@@ -33,6 +33,17 @@ const APP_key = 'cdd7c5ad18ab2d20abbbae0c49627f8d';
 
 //define function to determine that will determine what happens when the form is submitted
 //e.preventDefault will prevent form from submitting by default
+searchIcon.addEventListener('click', (e) =>{
+    e.preventDefault();
+    //e= event object, in this case the 'submit' event 
+    const input = document.querySelector('#search-input');
+    searchValue = input.value
+    //grab and store search input entered by user in the searchValue variable below
+     console.log("you clicked me, I'm the search icon")
+     console.log(input.value)
+    // searchValue = e.target.querySelector('input').value
+    fetchAPI();
+})
 
 searchForm.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -42,17 +53,20 @@ searchForm.addEventListener('submit', (e) =>{
 
     searchValue = e.target.querySelector('input').value
     fetchAPI();
+
+    // if(searchValue){
+    //     searchIcon.onclick =() =>{
+    //         console.log("you clicked me, I'm the search icon")
+    //         console.log(e)
+    //     }
+    // }
 })
 
-// searchIcon.addEventListener('click', (e) =>{
-//     e.preventDefault();
-//     //e= event object, in this case the 'submit' event 
 
-//     //grab and store search input entered by user in the searchValue variable below
+    
 
-//     searchValue = e.target.querySelector('input').value
-//     fetchAPI();
-// })
+
+
 
 //create fetch API function
 
